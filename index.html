@@ -23,7 +23,7 @@ $(document).ready(function(){
 $("#add").click(function(){
 var num1 = $("#A_value").val(); 
 var num2 = $("#B_value").val();
-var result = num1+num2;
+var result = parseInt(num1)+parseInt(num2);
 
 <!--$("#result").html(num);-->
 $("#damages_val").text(parseInt(result));
