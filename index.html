@@ -1,7 +1,7 @@
 <!--
 Author: Chao-Hsuan Ke
 Mail: phelpske.dev at gmail dot com
-Last updated: April 07, 2020 00:21 AM
+Last updated: April 07, 2020 00:45 AM
 -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -15,9 +15,6 @@ Last updated: April 07, 2020 00:21 AM
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-var num1= $("#A_value").val(); 
-var num2 = $("#B_value").val() 
-var total = num1+num2; 
 
 $(document).ready(function(){
 $("#add").click(function(){
@@ -25,10 +22,10 @@ var num1 = $("#A_value").val();
 var num2 = $("#B_value").val();
 var result = parseInt(num1)+parseInt(num2);
 
-<!--$("#result").html(num);-->
-$("#damages_val").text(parseInt(result));
+$("#damages_val").text(result);
 })
 });
+
 </script>
 </head>
 <body>
@@ -50,7 +47,7 @@ $("#damages_val").text(parseInt(result));
 </tr>
 <tr>
 <td><div id="result"></div></td>
-<label id='damages_val'>$</label>
+<label id='damages_val'></label>
 </tr>
 </table>
 </body>
