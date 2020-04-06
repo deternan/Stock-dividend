@@ -15,7 +15,18 @@ Last updated: April 07, 2020 00:21 AM
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
+var num1= $("#A_value").val(); 
+var num2 = $("#B_value").val() 
+var total = num1+num2; 
 
+$(document).ready(function(){
+$("#add").click(function(){
+var num1= $("#A_value").val(); 
+var num2 = $("#B_value").val();
+var result = num1+num2;
+
+$("#result").html(num);
+});
 </script>
 </head>
 <body>
@@ -31,6 +42,12 @@ Last updated: April 07, 2020 00:21 AM
 <tr>
 <td>現金股利</td>
 <td><input type="text" id="B_value" value=""></td>
+</tr>
+<tr>
+<input type="button" id="add" value="計算" />
+</tr>
+<tr>
+<div id="result">3</div>
 </tr>
 </table>
 </body>
