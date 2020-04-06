@@ -25,7 +25,9 @@ var num1 = $("#A_value").val();
 var num2 = $("#B_value").val();
 var result = num1+num2;
 
-$("#result").html(num);
+<!--$("#result").html(num);-->
+$("#damages_val").text(parseInt(result));
+})
 });
 </script>
 </head>
@@ -48,6 +50,7 @@ $("#result").html(num);
 </tr>
 <tr>
 <td><div id="result"></div></td>
+<label id='damages_val'>$</label>
 </tr>
 </table>
 </body>
