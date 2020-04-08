@@ -1,7 +1,7 @@
 <!--
 Author: Chao-Hsuan Ke
 Mail: phelpske.dev at gmail dot com
-Last updated: April 07, 2020 00:45 AM
+Last updated: April 07, 2020 11:35 PM
 -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -10,19 +10,24 @@ Last updated: April 07, 2020 00:45 AM
 <title>股利計算機</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
 
 $(document).ready(function(){
 $("#add").click(function(){
+var sv = $("#stock_value").val(); 
 var num1 = $("#A_value").val(); 
 var num2 = $("#B_value").val();
 var result = parseInt(num1)+parseInt(num2);
 
-$("#damages_val").text(result);
+var fraction =  parseFloat(sv) - parseFloat(num1);
+var denominator = parseFloat(1)+ (parseFloat(num2)/10);
+var finalResult = fraction / denominator
+var dividedValue = parseFloat(num1*1000) + ((parseFloat(num2) * 100) * parseFloat(sv))
+$("#damages_val").text(finalResult);
+$("#dividedValue").text(dividedValue);
 })
 });
 
@@ -46,8 +51,12 @@ $("#damages_val").text(result);
 <td><input type="button" id="add" value="計算"></td>
 </tr>
 <tr>
-<td><div id="result"></div></td>
-<label id='damages_val'></label>
+<td><div id="result">除權息後股價</div></td>
+<td><label id='damages_val'></label></td>
+</tr>
+<tr>
+<td><div id="result">本次股利價值</div></td>
+<td><label id='dividedValue'></label></td>
 </tr>
 </table>
 </body>
